@@ -1,0 +1,74 @@
+import image2 from "../assets/Gemini_Generated_Image_f6ur4sf6ur4sf6ur-removebg-preview.png";
+
+const About = () => {
+  return (
+    <div className="w-full pt-10 px-10 flex justify-between">
+      {/* Left Content */}
+      <div className="w-1/2 flex flex-col gap-8">
+        {/* Section Title */}
+        <div className="flex items-center gap-3">
+          <span className="inline-block bg-red-500 w-3 h-3 rounded-full"></span>
+          <p className="text-white uppercase tracking-wider text-sm font-semibold">
+            About Me
+          </p>
+        </div>
+
+        {/* Description */}
+        <div className="text-white text-lg font-light leading-relaxed opacity-90 space-y-5">
+          <p>
+            I’m a <b className="text-red-500">frontend developer</b> focused on
+            building responsive, accessible, and visually clean web interfaces.
+            I enjoy turning ideas into smooth, interactive user experiences
+            using modern web technologies.
+          </p>
+
+          <p>
+            I work on creating user-friendly designs with a strong emphasis on
+            performance, usability, and clean code. I enjoy refining small
+            details that make interfaces{" "}
+            <b className="text-red-500">intuitive and engaging</b>.
+          </p>
+
+          <p>
+            Always eager to learn, I’m continuously improving my skills and
+            exploring new tools to build better, more efficient digital
+            experiences.
+          </p>
+        </div>
+
+        {/* Role */}
+        <p className="text-white text-lg tracking-wide opacity-80 rounded-2xl bg-zinc-600 w-fit px-3 py-1 flex items-center gap-2">
+          <span className="inline-block bg-green-400 w-2 h-2 rounded-full"></span>{" "}
+          Frontend Developer | B.Tech CSE Student
+        </p>
+
+        {/* Info List */}
+        <div className="text-white text-lg space-y-2">
+          <p>
+            <span className="text-red-500 font-medium">Specialities:</span>{" "}
+            HTML, CSS, JavaScript, React, Tailwind CSS
+          </p>
+          <p>
+            <span className="text-red-500 font-medium">Passions:</span> Frontend
+            Development, UI/UX, Open Source
+          </p>
+          <p>
+            <span className="text-red-500 font-medium">Currently:</span>{" "}
+            Building projects & exploring modern frontend tools
+          </p>
+        </div>
+      </div>
+
+      {/* Right Image */}
+      <div className="w-1/2 h-[88vh]">
+        <img
+          src={image2}
+          alt="About illustration"
+          className="w-full h-full object-contain drop-shadow-[0_0_35px_rgba(255,255,255,0.25)]"
+        />
+      </div>
+    </div>
+  );
+};
+
+export default About;
