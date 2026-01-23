@@ -1,9 +1,9 @@
 import { Route, Routes } from "react-router-dom"
 import Home from "../pages/Home"
-import About from "../pages/about"
-import Skills from "../pages/skills"
-import Project from "../pages/project"
-import Contact from "../pages/contact"
+import About from "../pages/About"
+import Skills from "../pages/Skills"
+import Project from "../pages/Project"
+import Contact from "../pages/Contact"
 
 const Mainroutes = () => {
   return (
