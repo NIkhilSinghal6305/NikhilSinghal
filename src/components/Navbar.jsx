@@ -1,5 +1,4 @@
 import { NavLink } from "react-router-dom";
-import logo from "../assets/apple-touch-icon.png";
 
 const Navbar = () => {
   return (
@@ -7,7 +6,7 @@ const Navbar = () => {
       className="w-full h-[15vh] flex justify-between items-center py-10 sticky top-0 z-50 border-b border-gray-700 bg-black"
     >
       <NavLink to="/" className="flex items-center gap-4 h-full">
-        <img src={logo} alt="nikhil" className="h-10 w-10 object-contain"/>
+        <img src='/apple-touch-icon.png' alt="nikhil" className="h-10 w-10 object-contain"/>
         <h1 className="text-white font-bold font-['Caveat'] text-3xl">
           Nikhil Singhal
         </h1>
