@@ -1,22 +1,24 @@
 import image2 from "../assets/Gemini_Generated_Image_f6ur4sf6ur4sf6ur-removebg-preview.png";
+import PageWrapper from "../components/PageWrapper";
+import Skills from "./Skills";
 
 const About = () => {
   return (
-    <div className="w-full pt-10 px-10 flex justify-between">
-      {/* Left Content */}
+    <PageWrapper>
+    <div className="w-full pt-10 px-10 flex flex-col justify-between">
+      <div className="flex items-center gap-10">
+      
       <div className="w-1/2 flex flex-col gap-8">
-        {/* Section Title */}
         <div className="flex items-center gap-3">
-          <span className="inline-block bg-red-500 w-3 h-3 rounded-full"></span>
-          <p className="text-white uppercase tracking-wider text-sm font-semibold">
+          <span className="inline-block bg-red-600 w-1 h-7 rounded-full"></span>
+          <p className="text-white uppercase tracking-wider text-sm font-semibold font-['PT_Serif']">
             About Me
           </p>
         </div>
 
-        {/* Description */}
-        <div className="text-white text-lg font-light leading-relaxed opacity-90 space-y-5">
+        <div className="text-white text-lg font-light leading-relaxed opacity-90 space-y-5 font-['PT_Serif']">
           <p>
-            I’m a <b className="text-red-500">frontend developer</b> focused on
+            I'm a <b className="text-red-500">frontend developer</b> focused on
             building responsive, accessible, and visually clean web interfaces.
             I enjoy turning ideas into smooth, interactive user experiences
             using modern web technologies.
@@ -30,36 +32,33 @@ const About = () => {
           </p>
 
           <p>
-            Always eager to learn, I’m continuously improving my skills and
+            Always eager to learn, I'm continuously improving my skills and
             exploring new tools to build better, more efficient digital
             experiences.
           </p>
         </div>
 
-        {/* Role */}
-        <p className="text-white text-lg tracking-wide opacity-80 rounded-2xl bg-zinc-600 w-fit px-3 py-1 flex items-center gap-2">
+        <p className="text-white text-lg tracking-wide opacity-80 rounded-2xl bg-zinc-600 w-fit px-3 py-1 flex items-center gap-2 font-['PT_Serif']">
           <span className="inline-block bg-green-400 w-2 h-2 rounded-full"></span>{" "}
           Frontend Developer | B.Tech CSE Student
         </p>
 
-        {/* Info List */}
-        <div className="text-white text-lg space-y-2">
+        <div className="text-white text-lg space-y-2 font-['PT_Serif']">
           <p>
-            <span className="text-red-500 font-medium">Specialities:</span>{" "}
+            <span className="text-red-500 font-medium font-['Caveat'] text-2xl">Specialities:</span>{" "}
             HTML, CSS, JavaScript, React, Tailwind CSS
           </p>
           <p>
-            <span className="text-red-500 font-medium">Passions:</span> Frontend
+            <span className="text-red-500 font-medium font-['Caveat'] text-2xl">Passions:</span> Frontend
             Development, UI/UX, Open Source
           </p>
           <p>
-            <span className="text-red-500 font-medium">Currently:</span>{" "}
+            <span className="text-red-500 font-medium font-['Caveat'] text-2xl">Currently:</span>{" "}
             Building projects & exploring modern frontend tools
           </p>
         </div>
       </div>
 
-      {/* Right Image */}
       <div className="w-1/2 h-[88vh]">
         <img
           src={image2}
@@ -67,7 +66,11 @@ const About = () => {
           className="w-full h-full object-contain drop-shadow-[0_0_35px_rgba(255,255,255,0.25)]"
         />
       </div>
-    </div>
+        
+      </div>
+      <Skills />
+      </div>
+      </PageWrapper>
   );
 };
 
