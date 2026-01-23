@@ -5,72 +5,124 @@ import PageWrapper from "../components/PageWrapper";
 const Home = () => {
   return (
     <PageWrapper>
-      <div
-        className="min-h-full py-34 w-full flex items-center justify-center"
-        style={{
-          backgroundImage: `url(${image})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed',
-        }}
-      >
-        {/* Dark Overlay Filter */}
-        <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+      {/* ================= MOBILE VIEW (Background Image) ================= */}
+      <div className="relative md:hidden w-full py-20 flex items-center px-6 overflow-hidden">
+        
+        {/* Background Image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-25 scale-105"
+          style={{ backgroundImage: `url(${image})` }}
+        />
 
-        {/* Content Over Background */}
-        <div className="relative z-10 w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
-            {/* Text Content */}
-            <div className="w-full lg:w-1/2 flex flex-col gap-6 text-center lg:text-left">
-              <h3 className="text-2xl sm:text-3xl lg:text-4xl text-red-500 font-['Caveat'] tracking-tight">
-                Hello My name is
-              </h3>
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black/65" />
 
-              <h1 className="text-4xl sm:text-5xl lg:text-7xl leading-tight font-['PT_Serif'] text-white">
-                Nikhil Singhal. <br className="hidden sm:block" />
-                <span>Frontend </span>
-                <span className="font-light opacity-80">Developer</span>
-              </h1>
+        {/* Content */}
+        <div className="relative z-10 text-white flex flex-col gap-6">
+          <h3 className="text-3xl text-red-500 font-['Caveat']">
+            Hello, my name is
+          </h3>
 
-              <p className="text-base sm:text-lg font-extralight opacity-90 font-['PT_Serif'] text-white">
-                I'm a frontend developer focused on building responsive, accessible,
-                and performance-driven web interfaces. I enjoy turning ideas into
-                interactive experiences using modern web technologies, with a strong
-                emphasis on clean design and user experience.
-              </p>
+          <h1 className="text-5xl leading-tight font-['PT_Serif']">
+            Nikhil Singhal. <br />
+            <span>Frontend </span>
+            <span className="font-light opacity-80">Developer</span>
+          </h1>
 
-              {/* Social Icons */}
-              <div className="flex gap-8 text-4xl sm:text-5xl justify-center lg:justify-start">
-                <a
-                  href="https://www.linkedin.com/in/nikhilsinghal6305"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white hover:text-red-500 hover:scale-110 transition-all"
-                  aria-label="LinkedIn"
-                >
-                  <FaLinkedin />
-                </a>
+          <p className="text-base leading-relaxed font-extralight opacity-90 font-['PT_Serif']">
+            I'm a frontend developer focused on building responsive, accessible,
+            and performance-driven web interfaces. I enjoy turning ideas into
+            interactive experiences using modern web technologies.
+          </p>
 
-                <a
-                  href="https://github.com/NIkhilSinghal6305"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white hover:text-red-500 hover:scale-110 transition-all"
-                  aria-label="GitHub"
-                >
-                  <FaGithub />
-                </a>
+          {/* Social Icons */}
+          <div className="flex gap-6 text-4xl mt-4">
+            <a
+              href="https://www.linkedin.com/in/nikhilsinghal6305"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-red-500 transition"
+            >
+              <FaLinkedin />
+            </a>
 
-                <a
-                  href="mailto:nikhilagarwal6305@gmail.com"
-                  className="text-white hover:text-red-500 hover:scale-110 transition-all"
-                  aria-label="Email"
-                >
-                  <FaEnvelope />
-                </a>
-              </div>
-            </div>
+            <a
+              href="https://github.com/NIkhilSinghal6305"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-red-500 transition"
+            >
+              <FaGithub />
+            </a>
+
+            <a
+              href="mailto:nikhilagarwal6305@gmail.com"
+              className="hover:text-red-500 transition"
+            >
+              <FaEnvelope />
+            </a>
           </div>
+        </div>
+      </div>
+
+      {/* ================= DESKTOP / LAPTOP VIEW (ORIGINAL LAYOUT) ================= */}
+      <div className="hidden md:flex pt-5 items-center justify-between w-full pb-1 px-10">
+        
+        {/* Left Content */}
+        <div className="text-white w-1/2 flex flex-col gap-6">
+          <h3 className="text-4xl text-red-500 font-['Caveat'] tracking-tight">
+            Hello My name is
+          </h3>
+
+          <h1 className="text-7xl leading-tight font-['PT_Serif']">
+            Nikhil Singhal. <br />
+            <span>Frontend </span>
+            <span className="font-light opacity-80">Developer</span>
+          </h1>
+
+          <p className="text-lg font-extralight opacity-90 font-['PT_Serif']">
+            I'm a frontend developer focused on building responsive, accessible,
+            and performance-driven web interfaces. I enjoy turning ideas into
+            interactive experiences using modern web technologies, with a strong
+            emphasis on clean design and user experience.
+          </p>
+
+          {/* Social Icons */}
+          <div className="flex gap-8 text-5xl">
+            <a
+              href="https://www.linkedin.com/in/nikhilsinghal6305"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-red-500 hover:scale-110 transition-all"
+            >
+              <FaLinkedin />
+            </a>
+
+            <a
+              href="https://github.com/NIkhilSinghal6305"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-red-500 hover:scale-110 transition-all"
+            >
+              <FaGithub />
+            </a>
+
+            <a
+              href="mailto:nikhilagarwal6305@gmail.com"
+              className="hover:text-red-500 hover:scale-110 transition-all"
+            >
+              <FaEnvelope />
+            </a>
+          </div>
+        </div>
+
+        {/* Right Image */}
+        <div className="w-1/2 flex justify-center items-center">
+          <img
+            src={image}
+            alt="Nikhil illustration"
+            className="w-[83vh] object-contain drop-shadow-[0_0_35px_rgba(255,255,255,0.2)]"
+          />
         </div>
       </div>
     </PageWrapper>
