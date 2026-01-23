@@ -53,9 +53,9 @@ const Contact = () => {
             </h1>
 
             <div className="flex gap-6 text-2xl sm:text-3xl text-white">
-              <FaLinkedin className="hover:text-red-500 hover:scale-110 transition-all cursor-pointer" />
-              <FaGithub className="hover:text-red-500 hover:scale-110 transition-all cursor-pointer" />
-              <FaEnvelope className="hover:text-red-500 hover:scale-110 transition-all cursor-pointer" />
+              <a target="blank" href="https://www.linkedin.com/in/nikhilsinghal6305/"><FaLinkedin className="hover:text-red-500 hover:scale-110 transition-all cursor-pointer" /></a>
+              <a target="blank" href="https://github.com/NIkhilSinghal6305"><FaGithub className="hover:text-red-500 hover:scale-110 transition-all cursor-pointer" /></a>
+              <a href="mailto:nikhilagarwal6305@gmail.com"><FaEnvelope className="hover:text-red-500 hover:scale-110 transition-all cursor-pointer" /></a>
             </div>
           </div>
 

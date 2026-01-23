@@ -37,49 +37,45 @@ const Project = () => {
   return (
     <PageWrapper>
       <div className="w-full flex flex-col items-center gap-14 px-4 md:px-10">
-
         {/* Heading */}
         <h1 className="text-white text-4xl sm:text-5xl md:text-6xl font-bold py-10 font-['Caveat']">
           My Projects
         </h1>
 
-        {/* ================= MOBILE VIEW (Overlay on Image) ================= */}
-        <div className="w-full flex flex-col gap-10 lg:hidden mb-16">
+        {/* ================= MOBILE VIEW (BLUR ONLY) ================= */}
+        <div className="w-full flex flex-col gap-16 lg:hidden mb-16">
           {projects.map((project) => (
             <div
               key={project.id}
-              className="relative w-full h-[280px] rounded-xl overflow-hidden"
+              className="relative w-full h-[380px] sm:h-[420px] rounded-2xl overflow-hidden"
             >
-              {/* Image */}
+              {/* BLURRED IMAGE */}
               <img
                 src={project.image}
                 alt={project.title}
-                className="w-full h-full object-cover"
+                className="absolute inset-0 w-full h-full scale-110 blur-[1px]"
               />
 
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent" />
-
-              {/* Content */}
-              <div className="absolute inset-0 flex flex-col justify-end p-5 text-white">
+              {/* SHARP CONTENT */}
+              <div className="relative z-10 h-full flex flex-col justify-end p-6 text-white">
                 <span className="text-sm font-['Caveat'] opacity-80">
                   {project.id}
                 </span>
 
-                <h2 className="text-xl font-semibold font-['PT_Serif']">
+                <h2 className="text-2xl font-semibold font-['PT_Serif']">
                   {project.title}
                 </h2>
 
-                <p className="text-sm opacity-85 mt-2 line-clamp-3 font-['PT_Serif']">
+                <p className="text-sm opacity-90 mt-2 line-clamp-3 font-['PT_Serif']">
                   {project.description}
                 </p>
 
-                <div className="flex gap-3 mt-4">
+                <div className="flex gap-4 mt-4">
                   <a
                     href={project.live}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-red-600 px-4 py-1 rounded-md text-sm"
+                    className="bg-red-600 px-4 py-1.5 rounded-md text-sm hover:bg-red-500 transition"
                   >
                     Live
                   </a>
@@ -87,7 +83,7 @@ const Project = () => {
                     href={project.code}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-gray-700 px-4 py-1 rounded-md text-sm"
+                    className="bg-gray-700 px-4 py-1.5 rounded-md text-sm hover:bg-gray-600 transition"
                   >
                     Code
                   </a>
@@ -97,7 +93,7 @@ const Project = () => {
           ))}
         </div>
 
-        {/* ================= DESKTOP VIEW (OLD LAYOUT) ================= */}
+        {/* ================= DESKTOP VIEW (UNCHANGED) ================= */}
         <div className="hidden lg:flex w-full flex-col gap-24 mb-16">
           {projects.map((project, index) => (
             <div
@@ -106,17 +102,16 @@ const Project = () => {
                 index % 2 !== 0 ? "flex-row-reverse" : ""
               }`}
             >
-              {/* Image */}
-              <div className="w-1/2 overflow-hidden rounded-xl">
+              <div className="w-1/2 overflow-hidden rounded-xl border-4 border-gray-600
+                              hover:border-red-500/60 transition-all duration-500">
                 <img
-                  className="w-full object-cover border-8 border-gray-600 rounded-xl
-                             hover:scale-106 transition-all duration-500"
+                  className="w-full h-auto object-contain rounded-lg
+                             hover:scale-105 transition-transform duration-500"
                   src={project.image}
                   alt={project.title}
                 />
               </div>
 
-              {/* Content */}
               <div className="w-1/2 flex flex-col gap-4">
                 <h1 className="text-4xl text-white font-['Caveat']">
                   {project.id}
@@ -152,7 +147,6 @@ const Project = () => {
             </div>
           ))}
         </div>
-
       </div>
     </PageWrapper>
   );
