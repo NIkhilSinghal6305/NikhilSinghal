@@ -1,1 +1,41 @@
 @import "tailwindcss";
+
+.icon-float {
+  font-size: 5.5rem;          /* BIG icons */
+  animation: float 4.5s ease-in-out infinite;
+  transition: transform 0.35s ease;
+  cursor: pointer;
+}
+
+/* Different speed so icons don’t move together */
+.icon-float:nth-child(odd) {
+  animation-duration: 5.5s;
+}
+.icon-float:nth-child(even) {
+  animation-duration: 6.5s;
+}
+
+.icon-float:hover {
+  animation-play-state: paused;
+  transform: scale(1.2);
+}
+
+/* Floating animation */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Bigger on large screens */
+@media (min-width: 1024px) {
+  .icon-float {
+    font-size: 7.5rem;
+  }
+}
