@@ -17,7 +17,7 @@ import PageWrapper from "../components/PageWrapper";
 const Skills = () => {
   return (
     <PageWrapper>
-      <div className="flex flex-col items-center justify-center w-full pt-10 h-auto gap-19 px-4 pb-20">
+      <div className="flex flex-col items-center justify-center w-full pt-10 h-auto gap-19 px-4 md:pb-15">
         
         {/* Heading */}
         <h1 className="text-white text-4xl sm:text-5xl md:text-6xl font-bold font-['Caveat']">

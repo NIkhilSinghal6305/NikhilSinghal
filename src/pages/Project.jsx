@@ -37,53 +37,55 @@ const Project = () => {
   return (
     <PageWrapper>
       <div className="w-full h-auto flex flex-col items-center gap-14 px-4 md:px-10">
-        {/* Heading */}
         <h1 className="text-white text-5xl sm:text-5xl md:text-6xl font-bold py-10 font-['Caveat']">
           My Projects
         </h1>
 
-        {/* ================= MOBILE VIEW (BLUR ONLY) ================= */}
-        <div className="w-full flex flex-col gap-16 lg:hidden mb-16">
+        <div className="w-full flex flex-col gap-12 lg:hidden mb-16">
           {projects.map((project) => (
             <div
               key={project.id}
-              className="relative w-full h-[400px] rounded-2xl overflow-hidden"
+              className="w-full bg-[#111] rounded-2xl overflow-hidden shadow-lg"
             >
-              {/* BLURRED IMAGE */}
+              {/* Image */}
               <img
                 src={project.image}
                 alt={project.title}
-                className="absolute inset-0 w-full h-full scale-110 blur-[0.5px]"
+                className="w-full h-[200px] object-cover"
               />
 
-              {/* SHARP CONTENT */}
-              <div className="relative z-10 h-full flex flex-col justify-end p-6 text-white">
-                <span className="text-sm font-['Caveat'] opacity-80">
+              {/* Content */}
+              <div className="p-5 text-white flex flex-col gap-3">
+                <span className="text-xs tracking-widest font-['Caveat'] opacity-60">
                   {project.id}
                 </span>
 
-                <h2 className="text-2xl font-semibold font-['PT_Serif']">
+                <h2 className="text-2xl font-semibold font-['PT_Serif'] leading-tight">
                   {project.title}
                 </h2>
 
-                <p className="text-sm opacity-90 mt-2 line-clamp-3 font-['PT_Serif']">
+                <p className="text-sm font-['PT_Serif'] opacity-85 leading-relaxed">
                   {project.description}
                 </p>
 
-                <div className="flex gap-4 mt-4">
+                {/* Buttons */}
+                <div className="flex gap-3 mt-4">
                   <a
                     href={project.live}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-red-600 px-4 py-1.5 rounded-md text-sm hover:bg-red-500 transition"
+                    className="flex-1 text-center bg-red-600 py-2 rounded-lg
+                       text-sm hover:bg-red-500 active:scale-95 transition"
                   >
                     Live
                   </a>
+
                   <a
                     href={project.code}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-gray-700 px-4 py-1.5 rounded-md text-sm hover:bg-gray-600 transition"
+                    className="flex-1 text-center bg-gray-700 py-2 rounded-lg
+                       text-sm hover:bg-gray-600 active:scale-95 transition"
                   >
                     Code
                   </a>
@@ -102,8 +104,10 @@ const Project = () => {
                 index % 2 !== 0 ? "flex-row-reverse" : ""
               }`}
             >
-              <div className="w-1/2 overflow-hidden rounded-xl border-4 border-gray-600
-                              hover:border-red-500/60 transition-all duration-500">
+              <div
+                className="w-1/2 overflow-hidden rounded-xl border-4 border-gray-600
+                              hover:border-red-500/60 transition-all duration-500"
+              >
                 <img
                   className="w-full h-auto object-contain rounded-lg
                              hover:scale-105 transition-transform duration-500"

@@ -5,7 +5,7 @@ import PageWrapper from "../components/PageWrapper";
 const Contact = () => {
   return (
     <PageWrapper>
-      <div className="w-full min-h-[calc(100svh-80px)] md:min-h-[85vh] pt-10 flex flex-col items-center gap-12 px-4 md:px-10">
+      <div className="w-full min-h-[calc(100svh-80px)] md:min-h-[85vh] pt-1 flex flex-col items-center gap-12 px-4 md:px-10">
         
         <h1 className="text-white font-bold text-4xl sm:text-5xl font-['Caveat']">
           Get In Touch
