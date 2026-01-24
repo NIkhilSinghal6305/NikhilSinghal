@@ -1,21 +1,17 @@
-import { Route, Routes } from "react-router-dom"
-import Home from "../pages/Home"
-import About from "../pages/About"
-import Skills from "../pages/Skills"
-import Project from "../pages/Project"
-import Contact from "../pages/Contact"
+import { Route, Routes } from "react-router-dom";
+import LandingPage from "../pages/LandingPage";
 
 const Mainroutes = () => {
   return (
-      <Routes>
-        <Route path="/" element={<Home />} ></Route>
-        <Route path="/home" element={<Home />} ></Route>
-        <Route path="/about" element={<About />} ></Route>
-        <Route path="/skills" element={<Skills />} ></Route>
-        <Route path="/project" element={<Project />} ></Route>
-        <Route path="/contact" element={<Contact />} ></Route>
-      </Routes>
-  )
-}
+    <Routes>
+      <Route path="/" element={<LandingPage />} />
+      <Route path="/home" element={<LandingPage />} />
+      <Route path="/about" element={<LandingPage />} />
+      <Route path="/skills" element={<LandingPage />} />
+      <Route path="/project" element={<LandingPage />} />
+      <Route path="/contact" element={<LandingPage />} />
+    </Routes>
+  );
+};
 
-export default Mainroutes
+export default Mainroutes;

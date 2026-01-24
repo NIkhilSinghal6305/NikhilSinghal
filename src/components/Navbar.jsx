@@ -1,9 +1,10 @@
-import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
@@ -13,65 +14,59 @@ const Navbar = () => {
       ? "text-red-400"
       : "hover:translate-x-1 transition-all hover:text-red-300";
 
+  const scrollToSection = (id) => {
+    closeMenu();
+    navigate(id === "home" ? "/" : `/${id}`);
+
+    setTimeout(() => {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    }, 50);
+  };
+
   return (
-    <nav className="relative w-full h-[15vh] min-h-[80px] flex justify-between items-center px-4 md:px-6 lg:px-10 py-4 sticky top-0 z-50 bg-black">
+    <nav className="w-full h-[15vh] flex justify-between mb-2 items-center px-4 md:px-6 lg:px-10 py-4 sticky top-0 z-50 bg-black">
       
       {/* Logo */}
-      <NavLink to="/" className="flex items-center gap-2 md:gap-4 h-full">
-        <img
-          src="/apple-touch-icon.png"
-          alt="nikhil"
-          className="h-8 w-8 md:h-10 md:w-10 object-contain"
-        />
+      <button onClick={() => scrollToSection("home")} className="flex items-center gap-2 md:gap-4 h-full">
+        <img src="/apple-touch-icon.png" alt="nikhil" className="h-8 w-8 md:h-10 md:w-10 object-contain" />
         <h1 className="text-white font-bold font-['Caveat'] text-xl md:text-2xl lg:text-3xl">
           Nikhil Singhal
         </h1>
-      </NavLink>
+      </button>
 
       {/* Desktop Navigation */}
-      <div className="hidden lg:flex w-[45%] xl:w-[40%] justify-around text-white text-lg font-['PT_Serif']">
-        <NavLink className={({ isActive }) => navLinkClass(isActive)} to="/home">
-          Home
-        </NavLink>
-        <NavLink className={({ isActive }) => navLinkClass(isActive)} to="/about">
-          About
-        </NavLink>
-        <NavLink className={({ isActive }) => navLinkClass(isActive)} to="/skills">
-          Skills
-        </NavLink>
-        <NavLink className={({ isActive }) => navLinkClass(isActive)} to="/project">
-          Project
-        </NavLink>
-        <NavLink className={({ isActive }) => navLinkClass(isActive)} to="/contact">
-          Contact
-        </NavLink>
-      </div>
+      <div className="hidden lg:flex gap-8 w-[45%] xl:w-[40%] justify-around text-white text-lg font-['PT_Serif']">
+        {["home", "about", "skills", "project", "contact"].map((item) => (
+          <button
+            key={item}
+            onClick={() => scrollToSection(item)}
+            className={navLinkClass(false)}
+          >
+            {item.charAt(0).toUpperCase() + item.slice(1)}
+          </button>
+        ))}
 
-      {/* Desktop Resume Button */}
-      <a
-        href="/Resume.pdf"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="hidden lg:block px-4 py-2 bg-red-500 hover:bg-red-600 transition rounded hover:scale-95 text-white text-xl font-semibold font-['PT_Serif']"
-      >
-        Resume
-      </a>
+        <a
+          target="blank"
+          href="Resume.pdf"
+          className="transition bg-red-600 hover:bg-red-500 px-3 py-2 rounded-md text-white font-['PT_Serif']">
+          Resume
+        </a>
+      </div>
 
       {/* Mobile Menu Button */}
       <button
         onClick={toggleMenu}
-        className="lg:hidden text-white p-2 hover:bg-gray-800 rounded transition relative z-[60]"
-        aria-label="Toggle menu"
+        className="lg:hidden text-white p-2 hover:bg-gray-800 rounded transition relative z-60"
       >
         {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
       </button>
+      
 
       {/* Overlay */}
       {isMenuOpen && (
-        <div
-          className="fixed inset-0 bg-black/50 lg:hidden z-40"
-          onClick={closeMenu}
-        />
+        <div className="fixed inset-0 bg-black/50 lg:hidden z-40" onClick={closeMenu} />
       )}
 
       {/* Mobile Menu */}
@@ -81,25 +76,21 @@ const Navbar = () => {
         }`}
       >
         <div className="flex flex-col items-start gap-6 pt-24 px-8 text-white text-lg font-['PT_Serif']">
-          <NavLink to="/home" onClick={closeMenu}>Home</NavLink>
-          <NavLink to="/about" onClick={closeMenu}>About</NavLink>
-          <NavLink to="/skills" onClick={closeMenu}>Skills</NavLink>
-          <NavLink to="/project" onClick={closeMenu}>Project</NavLink>
-          <NavLink to="/contact" onClick={closeMenu}>Contact</NavLink>
-
+          {["home", "about", "skills", "project", "contact"].map((item) => (
+            <button key={item} onClick={() => scrollToSection(item)}>
+              {item.charAt(0).toUpperCase() + item.slice(1)}
+            </button>
+          ))}
           <a
-            href="/Resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-4 px-6 py-2 bg-red-500 hover:bg-red-600 transition rounded text-white text-lg font-semibold w-full text-center"
-            onClick={closeMenu}
-          >
-            Resume
-          </a>
+          target="blank"
+          href="Resume.pdf"
+          className="transition bg-red-600 hover:bg-red-500 px-3 py-2 rounded-md text-white font-['PT_Serif']">
+          Resume
+        </a>
         </div>
       </div>
 
-      {/* 🔥 Animated Bottom Border */}
+      {/* Animated Bottom Border (unchanged) */}
       <div className="absolute bottom-0 left-0 w-full h-1 overflow-hidden">
         <div className="w-[200%] h-full bg-gradient-to-r from-black via-red-600 to-black animate-gradient-bg" />
       </div>

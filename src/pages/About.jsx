@@ -1,12 +1,16 @@
 import image2 from "../assets/Gemini_Generated_Image_f6ur4sf6ur4sf6ur-removebg-preview.png";
 import PageWrapper from "../components/PageWrapper";
-import Skills from "./Skills";
 
 const About = () => {
   return (
     <PageWrapper>
-      <div className="w-full py-10 px-5 md:px-10 flex flex-col justify-between">
-        <div className="flex flex-col lg:flex-row items-center gap-10">
+      <div className="relative w-full py-10 px-5 md:px-10 flex flex-col justify-between gap-10 overflow-hidden">
+        
+        {/* 🔥 Blurred Background */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-red-600/50 to-black blur-[50px] scale-105" />
+
+        {/* Content */}
+        <div className="relative z-10 flex flex-col lg:flex-row items-center gap-10">
           
           {/* Text Section */}
           <div className="w-full lg:w-1/2 flex flex-col gap-8">
@@ -39,7 +43,7 @@ const About = () => {
               </p>
             </div>
 
-            <p className="text-white text-base md:text-lg tracking-wide opacity-80 rounded-2xl bg-zinc-600 w-fit px-3 py-1 flex items-center gap-2 font-['PT_Serif']">
+            <p className="text-white text-base md:text-lg tracking-wide opacity-80 rounded-2xl bg-zinc-600/80 backdrop-blur-md w-fit px-3 py-1 flex items-center gap-2 font-['PT_Serif']">
               <span className="inline-block bg-green-400 w-2 h-2 rounded-full"></span>
               Frontend Developer | B.Tech CSE Student
             </p>
@@ -66,7 +70,7 @@ const About = () => {
             </div>
           </div>
 
-          {/* Image Section (Hidden on Mobile) */}
+          {/* Image Section (Desktop Only) */}
           <div className="hidden lg:block w-1/2 h-[88vh]">
             <img
               src={image2}

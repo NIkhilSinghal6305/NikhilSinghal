@@ -6,8 +6,7 @@ const Home = () => {
   return (
     <PageWrapper>
       {/* ================= MOBILE VIEW (Background Image) ================= */}
-      <div className="relative md:hidden w-full py-20 flex items-center px-6 overflow-hidden">
-        
+      <div className="relative md:hidden w-full h-auto py-32 flex items-center px-6 overflow-hidden">
         {/* Background Image */}
         <div
           className="absolute inset-0 bg-cover bg-center opacity-25 scale-105"
@@ -26,7 +25,7 @@ const Home = () => {
           <h1 className="text-5xl leading-tight font-['PT_Serif']">
             Nikhil Singhal. <br />
             <span>Frontend </span>
-            <span className="font-light opacity-80">Developer</span>
+            <span className="text-red-400 md:text-red-950">Developer</span>
           </h1>
 
           <p className="text-base leading-relaxed font-extralight opacity-90 font-['PT_Serif']">
@@ -67,7 +66,6 @@ const Home = () => {
 
       {/* ================= DESKTOP / LAPTOP VIEW (ORIGINAL LAYOUT) ================= */}
       <div className="hidden md:flex pt-5 items-center justify-between w-full pb-1 px-10">
-        
         {/* Left Content */}
         <div className="text-white w-1/2 flex flex-col gap-6">
           <h3 className="text-4xl text-red-500 font-['Caveat'] tracking-tight">
@@ -77,7 +75,9 @@ const Home = () => {
           <h1 className="text-7xl leading-tight font-['PT_Serif']">
             Nikhil Singhal. <br />
             <span>Frontend </span>
-            <span className="font-light opacity-80">Developer</span>
+            <span className="text-red-500 md:text-red-850 opacity-60">
+              Developer
+            </span>
           </h1>
 
           <p className="text-lg font-extralight opacity-90 font-['PT_Serif']">
@@ -121,7 +121,14 @@ const Home = () => {
           <img
             src={image}
             alt="Nikhil illustration"
-            className="w-[83vh] object-contain drop-shadow-[0_0_35px_rgba(255,255,255,0.2)]"
+            className="
+    w-[83 vh]
+    object-contain
+    drop-shadow-[0_0_35px_rgba(255,255,255,0.2)]
+    hover:drop-shadow-[0_0_30px_rgba(255,0,0,0.45)]
+    transition-all
+    duration-300
+  "
           />
         </div>
       </div>

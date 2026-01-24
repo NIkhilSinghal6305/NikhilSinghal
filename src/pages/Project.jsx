@@ -36,9 +36,9 @@ const projects = [
 const Project = () => {
   return (
     <PageWrapper>
-      <div className="w-full flex flex-col items-center gap-14 px-4 md:px-10">
+      <div className="w-full h-auto flex flex-col items-center gap-14 px-4 md:px-10">
         {/* Heading */}
-        <h1 className="text-white text-4xl sm:text-5xl md:text-6xl font-bold py-10 font-['Caveat']">
+        <h1 className="text-white text-5xl sm:text-5xl md:text-6xl font-bold py-10 font-['Caveat']">
           My Projects
         </h1>
 
@@ -47,13 +47,13 @@ const Project = () => {
           {projects.map((project) => (
             <div
               key={project.id}
-              className="relative w-full h-[380px] sm:h-[420px] rounded-2xl overflow-hidden"
+              className="relative w-full h-[400px] rounded-2xl overflow-hidden"
             >
               {/* BLURRED IMAGE */}
               <img
                 src={project.image}
                 alt={project.title}
-                className="absolute inset-0 w-full h-full scale-110 blur-[1px]"
+                className="absolute inset-0 w-full h-full scale-110 blur-[0.5px]"
               />
 
               {/* SHARP CONTENT */}

@@ -1,32 +1,28 @@
 import { motion } from "framer-motion";
 
 const pageVariants = {
-  initial: {
+  hidden: {
     opacity: 0,
-    y: 30,
+    y: 40,
   },
-  animate: {
+  visible: {
     opacity: 1,
     y: 0,
-  },
-  exit: {
-    opacity: 0,
-    y: -30,
   },
 };
 
 const pageTransition = {
-  duration: 0.5,
-  ease: "easeInOut",
+  duration: 0.9,
+  ease: "easeOut",
 };
 
 const PageWrapper = ({ children }) => {
   return (
     <motion.div
       variants={pageVariants}
-      initial="initial"
-      animate="animate"
-      exit="exit"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
       transition={pageTransition}
       className="w-full"
     >
