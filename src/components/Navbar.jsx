@@ -92,7 +92,7 @@ const Navbar = () => {
 
       {/* Animated Bottom Border (unchanged) */}
       <div className="absolute bottom-0 left-0 w-full h-1 overflow-hidden">
-        <div className="w-[200%] h-full bg-gradient-to-r from-black via-red-600 to-black animate-gradient-bg" />
+        <div className="w-[200%] h-full bg-linear-to-r from-black via-red-600 to-black animate-gradient-bg" />
       </div>
     </nav>
   );

@@ -30,24 +30,24 @@ const LandingPage = () => {
 
   return (
     <div className="flex flex-col gap-20">
-      <section id="home" className="scroll-mt-[72px] md:scroll-mt-[80px]"
+      <section id="home" className="scroll-mt-18 md:scroll-mt-20"
 >
         <Home />
       </section>
 
-      <section id="about" className="scroll-mt-[72px] md:scroll-mt-[80px]">
+      <section id="about" className="scroll-mt-18 md:scroll-mt-20">
         <About />
       </section>
 
-      <section id="skills" className="scroll-mt-[72px] md:scroll-mt-[80px]">
+      <section id="skills" className="scroll-mt-18 md:scroll-mt-20">
         <Skills />
       </section>
 
-      <section id="project" className="scroll-mt-[72px] md:scroll-mt-[80px]">
+      <section id="project" className="scroll-mt-18 md:scroll-mt-20">
         <Project />
       </section>
 
-      <section id="contact" className="scroll-mt-[72px] md:scroll-mt-[80px]">
+      <section id="contact" className="scroll-mt-18 md:scroll-mt-20">
         <Contact />
       </section>
     </div>
