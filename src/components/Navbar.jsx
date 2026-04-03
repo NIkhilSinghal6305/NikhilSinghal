@@ -49,7 +49,7 @@ const Navbar = () => {
 
         <a
           target="blank"
-          href="Resume.pdf"
+          href="Nikhil_resume.pdf"
           className="transition bg-red-600 hover:bg-red-500 px-3 py-2 rounded-md text-white font-['PT_Serif']">
           Resume
         </a>
