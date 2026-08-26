@@ -3,6 +3,7 @@ import image from "../assets/Gemini_Generated_Image_6t83js6t83js6t83-removebg-pr
 import PageWrapper from "../components/PageWrapper";
 
 const Home = () => {
+
   return (
     <PageWrapper>
       {/* ================= MOBILE VIEW (Background Image) ================= */}
@@ -23,7 +24,7 @@ const Home = () => {
           </h3>
 
           <h1 className="text-5xl leading-tight font-['PT_Serif']">
-            Nikhil Singhal. <br />
+            Pankaj Kumar. <br />
             <span>Frontend </span>
             <span className="text-red-400 md:text-red-950">Developer</span>
           </h1>
